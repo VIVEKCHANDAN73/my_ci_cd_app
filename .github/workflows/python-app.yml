@@ -19,7 +19,10 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd ~/my_ci_cd_app|| https://github.com/VIVEKCHANDAN73/my_ci_cd_app.git ~/my_ci_cd_app
-          cd ~/my_ci_cd_app
-          git pull
-          python3 main.py > output.txt
+            if [ ! -d ~/my_ci_cd_app ]; then
+            git clone https://github.com/VIVEKCHANDAN73/my_ci_cd_app.git ~/my_ci_cd_app
+            fi
+            cd ~/my_ci_cd_app
+            git pull
+            python3 main.py > output.txt
+
