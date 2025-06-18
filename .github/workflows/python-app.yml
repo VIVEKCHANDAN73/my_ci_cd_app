@@ -19,7 +19,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd ~/print-name || git clone https://github.com/<your-username>/<your-repo>.git ~/print-name
-          cd ~/print-name
+          cd ~/my_ci_cd_app|| https://github.com/VIVEKCHANDAN73/my_ci_cd_app.git ~/my_ci_cd_app
+          cd ~/my_ci_cd_app
           git pull
           python3 main.py > output.txt
